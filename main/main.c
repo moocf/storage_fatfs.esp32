@@ -25,13 +25,13 @@ static esp_err_t storage_fatfs() {
   };
   ERET( esp_vfs_fat_spiflash_mount("/fatfs", "storage", &config, &handle) );
   printf("- Open /fatfs/poke.txt and write to it\n");
-  FILE *file = fopen("/fatfs/poke.txt", "wb");
+  FILE *file = fopen("/fatfs/poke.txt", "a");
   if (file == NULL) return ESP_FAIL;
   fprintf(file, "charmender, squirtle, bulbasaur\n");
   fclose(file);
   printf("- Open /fatfs/poke.txt and read from it\n");
   file = fopen("/fatfs/poke.txt", "rb");
-  char buff[128];
+  char buff[1024];
   fread(buff, 1, sizeof(buff), file);
   fclose(file);
   printf("- Text read:\n%s", buff);
