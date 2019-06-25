@@ -1,2 +1,7 @@
-# storage_fatfs
-Use FAT FS to write and read files.
+Start WiFi as an access point.<br>
+*AP mode does not support AP scan.*
+
+```text
+includePath:
+/home/wolfram77/esp/esp-idf/components/**
+```
