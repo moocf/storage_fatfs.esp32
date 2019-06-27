@@ -1,5 +1,4 @@
-Start WiFi as an access point.<br>
-*AP mode does not support AP scan.*
+Use FAT FS to write and read files.
 
 ```text
 includePath:
